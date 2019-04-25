@@ -1,1 +1,24 @@
+#verupdate.txt	存放要更新的svn库名及240.201的版本和11.216的版本(由svnbakload.sh生成)
+#ver240.201	存放240.201的库名及版本(由个调version)
+#ver11.216	存放11.216的库名及版本(由11.216scp过来)
+#svnlist.txt	存放svn库名列表   没创建一个库就要在里面把库名加上，否则执行时不会将此库包含
+#getversion.sh	得到每个库的版本
+#svnverupdate.sh生成备份库
+#svnverdump.sh	分版本dump
+#svnverload.sh	分版本load
+#logs		存放日志
+#svndumpscp	目录存放dump文件
+#svnloadscp	目录存放预load文件
 
+#流程
+#1# 216得到库版本getversion(ver11.216.txt) -> 
+#2# scp216的ver11.216.txt到201,改为文件名-时间，复制到logs目录 -> 
+#3# 201得到库版本getversion(ver240.201.txt) -> 
+#4# 生成需要更新的库svnverupdate(verupdate.txt) -> 
+#5# scp verupdate.txt到11.216,改名复制到logs -> 
+#6# 11.216svnverdump到/root/svndumpscp/ -> 
+#7# scp /root/svndumpscp/的所有文件到240.201的/root/svnloadscp/(传输完删除文件) -> 
+#8# 240.201svnverload导入版本库(删除/root/svnloadscp/*) 
+
+#svndump.sh	无关，svndump的脚本
+#svnload.sh	无关，svnload的脚本
