@@ -1,0 +1,31 @@
+生成EXE文件：cxfreeze py路径  --target-dir 生成目标目录
+C:\Python27\Scripts>cxfreeze C:\Users\yufei.chen\Desktop\pythonpackage\open-falconjk.pyw --target-dir C:\Users\yufei.chen\Desktop\pythonpackage\pak
+
+使用：添加计划任务  参数  端口在前  进程在后
+例：cmd中
+C:\Users\yufei.chen\Desktop\pythonpackage\pak\open-falconjk.exe 80 3306 cmd.exe mstsc.exe
+
+
+
+
+–icon=图标路径
+-F 打包成一个exe文件
+-w 使用窗口，无控制台
+-c 使用控制台，无窗口
+-D 创建一个目录，里面包含exe以及其他一些依赖性文件
+pyinstaller -h 来查看参数
+
+
+
+打包文件成exe程序
+将cmd的目录切换至（命令：cd 文件路径(注意空格)）需要打包的py文件目录下：
+
+
+并输入代码，格式为使用命令：pyinstaller -F 文件名（带后缀py）：
+pyinstaller -F test.py
+
+
+C:\Users\yufei.chen\Desktop\pythonjiaoben\qtone\pak>pyinstaller -F --paths=C:\Py
+thon36\Lib\site-packages\PyQt5\Qt\bin --paths=C:\Python36\Lib\site-packages\PyQt
+5\Qt\plugins --paths=C:\Users\yufei.chen\Desktop\pythonjiaoben\qtone\pak --noupx
+ --clean pingproject1.py --noconsole
